@@ -1,4 +1,4 @@
-
+﻿
 
      angular.module('Music', ['restangular', 'music.state', 'music.auth', 'music.nav', 'music.tools', 'music.config', 'music.filter', 'music.directive', 'music.service', 'music.controller', 'music.access'])
 	 
@@ -6,7 +6,7 @@
 	 angular.module('Music')
 	 .controller('layoutCtrl', ['$scope', '$state', function($scope, $state){
 		      $scope.logout = function(){
-				      // 调用退出方法并跳转至登录页
+				      // 调用退出方法并跳转至登录页..
 				      $state.go('access.signin')
 			  }
 	 }])
