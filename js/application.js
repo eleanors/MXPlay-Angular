@@ -90,8 +90,7 @@
 	 
 	 
 	 
-	 // 我的音乐   view/music.index.html
-	 
+	 // 我的音乐view/music.index.html
 	 
 	 // 排行榜
 	 angular.module('Music').run(['$templateCache', function($templateCache){
