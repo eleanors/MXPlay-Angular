@@ -15,7 +15,7 @@ angular.module('music.service', [])
 					 function setPageTitle(){
 						    var multTitle, titles;
 							titles = arguments.length > 0 ? Array.prototype.slice.call(arguments) : title;
-							multTitle = angular.isString(titles) ? titles : [title].concat(titles).join('-');
+							multTitle = angular.isString(titles) ? titles : [title].concat(titles).join(' | ');
 							$window.document.title = multTitle;
 					 }
 					
