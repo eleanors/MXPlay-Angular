@@ -1,0 +1,34 @@
+<header class="header" data-ng-include="\access.html\"></header>
+<div class="container" style="margin-top:30px;">
+        <div class="col-md-8 hidden-xs"></div>
+                <div class="col-md-4">
+                        <div class="panel panel-default"><div class="panel-heading"><strong>注册</strong></div><div class="panel-body">
+                        <form class="panel-body" ng-submit="signup()">
+                            <div class="form-group">
+                                    <label class="control-label">邮箱</label>
+                                    <input type="email" class="form-control input-lg" ng-model="entity.email"></div>
+                            <div class="form-group">
+                                    <label class="control-label">密码</label>
+                                    <input type="password" class="form-control input-lg" ng-model="entity.password"></div>
+                            <div class="form-group">
+                                    <label class="control-label">确认密码</label>
+                                    <input type="password" class="form-control input-lg" ng-model="entity.confirmPassword"></div>
+                            <div class="checkbox">
+                                    <label>
+                                            <input type="checkbox" checked="checked"> 我已阅读并接受
+                                            <a href="javascript:;">MXPlay</a>
+                                    </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" btn-loading="signuploading" loading-text="注册中...">注册</button>
+                            <div class="line line-dashed"></div>
+                            <p class="text-muted text-center">
+                                    <small>已有注册账号, 可直接登录?</small>
+                            </p>
+                            <a href="javasrcript:;" ui-sref="access.signin" class="btn btn-default btn-block">登录</a>
+                        </form>
+                        </div>
+                </div>
+        </div>
+</div>
+<div toast-container data-ng-include="\common/layout/footer.html\">
+</div>
