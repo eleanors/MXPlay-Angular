@@ -111,7 +111,7 @@ angular.module('music.state', ['ui.router'])
 							      pageTitle: '我的音乐'
 							},
 							views: {
-								    'mainer@app': { templateUrl: 'site/mymusic.html'}
+								    'mainer@app': { templateUrl: 'view/music.index.html'}
 							}
 					}).state('app.ranking', {
 						    url: '/ranking',

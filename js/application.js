@@ -90,18 +90,9 @@
 	 
 	 
 	 
-	 // 我的音乐
-	 angular.module('Music').run(['$templateCache', function($templateCache){
-		   $templateCache.put('site/mymusic.html', '<div class="container">'+
-		      
-		           '<h4>我的音乐.....</h4><div class="jumbtron text-center">'+
-				   
-				        '<h3>主页</h3>'+
-				        '<p>暂无内容...</p>'+
-				   
-				   '</div>'+
-		   '</div>') 
-	 }])
+	 // 我的音乐   view/music.index.html
+	 
+	 
 	 // 排行榜
 	 angular.module('Music').run(['$templateCache', function($templateCache){
 		   $templateCache.put('site/ranking.html', '<div class="container">'+
@@ -135,7 +126,7 @@
 	 angular.module('Music').run(['$templateCache', function($templateCache){
 		   $templateCache.put('home/music/listview.html', '<div>音乐列表页...'+
 		   
-		           '<a ui-sref="app.music.detail({goodsId:100})">想你的夜</a>'+
+		           '<a ui-sref="app.music.detail({goodsId:100})">Music...</a>'+
 		   '</div>') 
 	 }])
 	 
