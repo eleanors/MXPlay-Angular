@@ -99,15 +99,15 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 		      		 $scope.signuploading = false;
 			  })   
 	   }
-}])
+}]);
 
 
 !function(Music){
 	  try{
-			 Music = angular.module('Music')
-	  }catch(e){
 		  
-			 Music = angular.module('Music', [])
+			 Music = angular.module('music.access');
+	  }catch(e){
+			 Music = angular.module('music.access', [])
 	  }
 	  
 	  Music.run(['$templateCache', function($templateCache){
@@ -143,10 +143,10 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 
 !function(Music){
 	  try{
-			 Music = angular.module('Music')
+			 Music = angular.module('music.access')
 	  }catch(e){
 		  
-			 Music = angular.module('Music', [])
+			 Music = angular.module('music.access', [])
 	  }
 	  
 	  Music.run(['$templateCache', function($templateCache){
