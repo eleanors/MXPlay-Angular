@@ -116,7 +116,7 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 					        '<div class="col-md-8 hidden-xs"></div>'+
 					        '<div class="col-md-4">'+
 							'<div class="panel panel-default"><div class="panel-heading"><h4>登录</h4></div><div class="panel-body">'+
-							'<form class="panel-body form-horizontal" form-validator="" formvalidatorconfig="eventformvalidate" method="post">'+
+							'<form class="panel-body form-horizontal" form-validator="" formvalidatorconfig="eventformvalidate">'+
 								   ' <div class="form-group form-user">'+
 											'<label class="control-label">手机号码：</label>'+
 											'<span class="login-ico login-user"></span>'+

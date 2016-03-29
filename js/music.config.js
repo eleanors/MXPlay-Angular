@@ -6,9 +6,9 @@ angular.module('music.config', ['music.service'])
 .constant('$config', {
        	host: {
 		       domain: 'localhost',
-			   www: window.location.host + '/routeru/api/',
+			   www: window.location.host + '/api/',
 			   static: 'static.localhost',
-			   api: '/routeru/api/'	
+			   api: '/api/'	
 		},
 		site: {
 		       name: 'MXPlay'	
