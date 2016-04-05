@@ -7,6 +7,8 @@ var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var autoprefixer = require('gulp-autoprefixer');
+
 
 var scriptsPath = 'js/';
 
@@ -34,4 +36,13 @@ gulp.task('default',function() {
         });
 
         return merge(tasks);
+});
+
+
+
+gulp.task('css', function () {
+	return gulp.src('css/index.css')
+		.pipe(autoprefixer())
+		.pipe(concat('all.css'))
+		.pipe(gulp.dest('build'));
 });
