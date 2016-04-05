@@ -44,7 +44,7 @@ angular.module('music.auth', ['restangular', 'LocalStorage', 'ipCookie', 'music.
 							  var defer = $q.defer();
 							  var config = angular.extend({}, transformRequest, options);
 							      window.postFlag ? console.log('postFlag....'):
-								  $http.post($filter('apiUrlPrefix')(url), data, config)
+								  $http.get($filter('apiUrlPrefix')(url), data, config)
 								  .then(function(data){
 									  
 									      authStatus(data, defer, config)
