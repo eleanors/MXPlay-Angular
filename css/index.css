@@ -70,8 +70,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .wrap-header{
       background: url('../images/2.jpg') no-repeat center top;
 	  background-size: 100% 100%;
-	  -webkit-background-size: 100% 100%;
-	  -moz-background-size:	100% 100%;
 }
 .color-overlay{
       background: rgba(0,0,0, 0.80);	
