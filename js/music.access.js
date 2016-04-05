@@ -81,7 +81,7 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 		 }
 }])
 
-.controller('signupCtrl', ['$scope', '$rootScope', '$state', '$toaster', 'authService', 'httpErrorFilter', function($scope, $rootScope, $state, $toaster, authService, httpErrorFilter){console.log(66);
+.controller('signupCtrl', ['$scope', '$rootScope', '$state', '$toaster', 'authService', 'httpErrorFilter', function($scope, $rootScope, $state, $toaster, authService, httpErrorFilter){
 	   $rootScope.loginPage = true;
 	   $scope.$on('$destroy', function(){
 		      $rootScope.loginPage = true;
@@ -112,7 +112,7 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 	  
 	  Music.run(['$templateCache', function($templateCache){
 			 $templateCache.put('access/signin.html', '<header class="header" data-ng-include="\'access.html\'"></header>'+
-					'<div class="container" style="margin-top:30px;">'+
+					'<div class="container" style="margin-top:15px;padding:0;">'+
 					        '<div class="col-md-8 hidden-xs"></div>'+
 					        '<div class="col-md-4">'+
 							'<div class="panel panel-default"><div class="panel-heading"><h4>登录</h4></div><div class="panel-body">'+
@@ -151,7 +151,7 @@ angular.module('music.access', ['ipCookie', 'music.auth', 'music.service', 'musi
 	  
 	  Music.run(['$templateCache', function($templateCache){
 			 $templateCache.put('access/signup.html', '<header class="header" data-ng-include="\'access.html\'"></header>'+
-					'<div class="container" style="margin-top:30px;">'+
+					'<div class="container" style="margin-top:15px;padding:0;">'+
 					        '<div class="col-md-8 hidden-xs"></div>'+
 					        '<div class="col-md-4">'+
 							'<div class="panel panel-default"><div class="panel-heading"><strong>注册</strong></div><div class="panel-body">'+
