@@ -5,44 +5,60 @@ var path = require('path');
 var gulp = require('gulp');
 var merge = require('merge-stream');
 var concat = require('gulp-concat');
+var rev = require('gulp-rev');
+var revCollector = require('gulp-rev-collector');
+var clean = require('gulp-clean');
+var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var autoprefixer = require('gulp-autoprefixer');
 
 
-var scriptsPath = 'js/';
-
-function getFolders(dir) {
-        return fs.readdirSync(dir).filter(function(file) {
-                return fs.statSync(path.join(dir, file)).isDirectory();
-        });
-}
-
-gulp.task('default',function() {
-        var folders = getFolders(scriptsPath);
-
-        var tasks = folders.map(function(folder) {
-                // 拼接成 foldername.js
-                // 写入输出
-                // 压缩
-                // 重命名为 folder.min.js
-                // 再一次写入输出
-                return gulp.src(path.join(scriptsPath, folder, '/*.js'))
-				       .pipe(concat(folder + '.js'))
-					   .pipe(gulp.dest(scriptsPath))
-					   .pipe(uglify())
-					   .pipe(rename(folder + '.min.js'))
-					   .pipe(gulp.dest(scriptsPath));
-        });
-
-        return merge(tasks);
-});
-
-
 
 gulp.task('css', function () {
-	return gulp.src('css/index.css')
-		.pipe(autoprefixer())
-		.pipe(concat('all.css'))
-		.pipe(gulp.dest('build'));
+	gulp.src('./css/*.css')
+		.pipe(concat('vendor.css'))
+		.pipe(minifyCss())
+		.pipe(rev())
+		.pipe(gulp.dest('./build'))
+		.pipe(rev.manifest())
+		.pipe(gulp.dest('rev'));
 });
+
+gulp.task('uglify', function () {
+	gulp.src('./lib/*.js')
+		.pipe(concat('lib.js'))
+		.pipe(uglify({
+            mangle: true,//类型：Boolean 默认：true 是否修改变量名
+            compress: true,//类型：Boolean 默认：true 是否完全压缩
+        }))
+		.pipe(rev())
+		.pipe(gulp.dest('./build'))
+		.pipe(rev.manifest())
+		.pipe(gulp.dest('rev'));
+});
+gulp.task('main', function () {
+	gulp.src('./js/*.js')
+		.pipe(concat('main.js'))
+		.pipe(uglify({
+            mangle: true,//类型：Boolean 默认：true 是否修改变量名
+            compress: true,//类型：Boolean 默认：true 是否完全压缩
+        }))
+		.pipe(rev())
+		.pipe(gulp.dest('./build'))
+		.pipe(rev.manifest())
+		.pipe(gulp.dest('rev'));
+});
+
+gulp.task('rev', function () {
+	gulp.src(['./rev/*.json', './index.html'])
+		.pipe(revCollector())
+		.pipe(gulp.dest('./build'))
+});
+
+gulp.task('clean', function(){
+     gulp.src(['./application/vendor.css', './application/lib.js'])
+	     .pipe(clean())	
+})
+
+gulp.task('default', ['clean', 'css', 'uglify', 'rev'])
